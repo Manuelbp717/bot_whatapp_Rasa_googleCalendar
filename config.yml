@@ -1,0 +1,53 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# The assistant project unique identifier
+# This default value must be replaced with a unique assistant name within your deployment
+assistant_id: 20250828-150608-another-relaxation
+
+# config.yml optimizada para bot en español
+# Rasa 3.x / 4.x
+
+language: es
+
+pipeline:
+  # Tokenizador que maneja palabras y acentos en español
+  # - name: SpacyTokenizer
+  #   model: "es_core_news_sm"
+  - name: WhitespaceTokenizer
+  # Featurizers para mejorar reconocimiento con errores de ortografía y escritura rápida
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+
+  # Clasificador de intenciones y entidades
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
+
+  # Mapper para sinónimos de entidades (ej. clases equivalentes)
+  - name: EntitySynonymMapper
+
+  # Selector de respuestas tipo FAQ
+  - name: ResponseSelector
+    epochs: 100
+
+  # Manejo de fallback si la confianza es baja
+  - name: FallbackClassifier
+    threshold: 0.4
+    ambiguity_threshold: 0.1
+
+  # Opcional: regex extractor para capturar fechas, horas y nombres de clases
+  - name: RegexEntityExtractor
+
+policies:
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+  - name: RulePolicy

@@ -1,0 +1,145 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - agendar_clase
+  - preguntar_clases
+  - preguntar_rentas
+  - preguntar_disponibilidad
+  - cancelar_clases
+  - despedidas
+
+entities:
+  - nombre
+  - telefono
+  - cupo
+  - cantidad
+  - clase
+  - fecha
+  - hora
+
+slots:
+  nombre:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nombre
+      - type: from_text
+  telefono:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: telefono
+      - type: from_text
+  cupo:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cupo
+      - type: from_text
+  cantidad:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cantidad
+      - type: from_text   
+  clase:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: clase
+      - type: from_text
+  fecha:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: fecha
+      - type: from_text
+  hora:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: hora
+      - type: from_text
+
+responses:
+  utter_greet:
+    - text: "¡Hola! 👋 Bienvenido a Strola. ¿Quieres conocer los horarios o agendar una clase?"
+
+  utter_goodbye:
+    - text: "¡Hasta luego! 💪 Que tengas un excelente día."
+    - text: "Nos vemos pronto en el gym. 🏋️‍♂️"
+
+  utter_affirm:
+    - text: "Perfecto 👍"
+    - text: "Genial"
+    - text: "Entendido"
+
+  utter_deny:
+    - text: "Está bien, no hay problema."
+    - text: "Entendido, lo cancelo."
+    - text: "Es una lastima."
+
+  utter_confirm_deny:
+    - text: "Permitame un momento, para notificar su cancelación"
+
+  utter_mood_great:
+    - text: "¡Me alegra escuchar eso! 💪🔥"
+    - text: "¡Excelente, sigamos con toda la energía!"
+
+  utter_mood_unhappy:
+    - text: "Lo siento mucho 😔, espero que entrenar te ayude a sentirte mejor."
+    - text: "Ánimo 💪, aquí estamos para motivarte."
+
+  utter_bot_challenge:
+    - text: "Soy el asistente virtual de Strola, estoy aquí para ayudarte a agendar y resolver dudas."
+
+  utter_agendar_clase:
+    - text: "Perfecto, he reservado tu clase de {clase} el {fecha} a las {hora}."
+    - text: "Tu clase de {clase} para el {fecha} a las {hora} ha sido confirmada."
+    - text: "Correcto, tu clase ha sido reversada con exito, te esperamos a las {hora}"
+
+  utter_preguntar_clases:
+    - text: "Tenemos clases de Entrenamiento Funcional, Stretching y Slide Class. ¿Te interesaria conocer los horarios?
+
+  utter_preguntar_disponibilidad:
+    - text: "Espera un momento, revisaré la disponibilidad de {clase} el {fecha} a las {hora}... ⏳"
+    - text: "Déjame verificar si hay cupo para {clase} el {fecha} a las {hora}..."
+    - text: "Checaré la disponibilidad de inmediato para la {clase} el {fecha} a las {hora}..."
+
+  utter_cancelar_clases:
+    - text: "Tu clase de {clase} el {fecha} a las {hora} ha sido cancelada. Esperamos verte pronto de nuevo"
+    - text: "He eliminado tu reserva de {clase}. Esperamos verte en otra clase pronto."
+
+  utter_despedidas:
+    - text: "¡Gracias por escribirnos!"
+    - text: "Hasta pronto, sigue entrenando con energía."
+    - text: "Ten un lindo día, hasta pronto"
+    - text: "¡Hasta pronto! Gracias por contactarnos"
+  
+  utter_pedir_algo_mas:
+    - text: "¿Quieres hacer otra consulta o reservar otra clase?"
+  
+  utter_confirmar_reserva:
+    - text: "Tu clase fue reservada. Nos vemos en el gym."
+    - text: "Ya reserve tu lugar, Nos vemos en el gym."
+  
+  utter_confirmar_cancelacion:
+    - text: "Tu clase fue cancelada, Esperamos verte en otra ocasión."
+  
+  utter_pago:
+    - text: "Para finalizar, te informamos que el pago de la clase puede ser por transferencia o pagar en caja, ¿Cómo deseas realizarlo?"
+
+actions:
+  - action_agendar_clase
+  - action_cancelar_clase
+  - action_preguntar_disponibilidad
+  - action_proceder_al_pago
+  - action_checar_clases
+  

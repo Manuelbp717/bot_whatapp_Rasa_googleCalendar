@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+
+# ---------- Saludo ----------
+# - story: Saludo de usuario
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+
+# ---------- Preguntar clases ----------
+- story: Usuario pregunta por clases disponibles
+  steps:
+  - intent: preguntar_clases
+  - action: utter_preguntar_clases
+  - action: utter_pedir_algo_mas
+
+# ---------- Consultar disponibilidad ----------
+- story: Usuario pregunta disponibilidad de una clase
+  steps:
+  - intent: preguntar_disponibilidad
+  - action: action_preguntar_disponibilidad
+  - action: utter_pedir_algo_mas
+
+# ---------- Agendar clase ----------
+- story: Usuario agenda una clase
+  steps:
+  - intent: agendar_clase
+  - action: action_agendar_clase
+  - action: utter_confirmar_reserva
+  - action: utter_pedir_algo_mas
+
+# ---------- Cancelar clase ----------
+- story: Usuario cancela una clase
+  steps:
+  - intent: cancelar_clases
+  - action: action_cancelar_clase
+  - action: utter_confirmar_cancelacion
+  - action: utter_pedir_algo_mas
+
+# ---------- Despedida ----------
+# - story: Despedida de usuario
+#   steps:
+#   - intent: despedidas
+#   - action: utter_despedidas
+
+# ---------- Bot challenge ----------
+- story: Usuario pregunta si eres un bot
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge

@@ -1,0 +1,24 @@
+# Ignorar el entorno virtual
+rasa_env/
+venv/
+.env
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Configuración de editor
+.vscode/
+.idea/
+
+# Archivos de logs y bases de datos locales
+*.log
+*.sqlite3
+
+# Caché de Rasa
+.rasa/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db

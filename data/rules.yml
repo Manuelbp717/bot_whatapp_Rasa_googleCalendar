@@ -1,0 +1,40 @@
+version: "3.1"
+
+rules:
+
+- rule: Saludo inicial
+  steps:
+  - intent: greet 
+  - action: utter_greet
+
+- rule: Decir adiós cuando el usuario se despida
+  steps:
+  - intent: despedidas
+  - action: utter_despedidas
+
+# #Este es para la accion inicial y para proporcionar las otras clases
+# - rule: Responder cuando el usuario pregunte por las clases disponibles
+#   steps:
+#   - intent: preguntar_clases
+#   - action: utter_preguntar_clases
+
+# #Esta es la regla que va a realizar checar las clases en google
+# - rule: Preguntar acerca de las rentas
+#   steps:
+#   - intent: preguntar_rentas
+#   - action: action_checar_clases
+
+# - rule: Responder cuando el usuario pregunte por disponibilidad
+#   steps:
+#   - intent: preguntar_disponibilidad
+#   - action: action_preguntar_disponibilidad
+
+# - rule: Agendar una clase cuando el usuario lo solicite
+#   steps:
+#   - intent: agendar_clase
+#   - action: action_agendar_clase
+
+# - rule: Cancelar una clase cuando el usuario lo solicite
+#   steps:
+#   - intent: cancelar_clases
+#   - action: action_cancelar_clase
