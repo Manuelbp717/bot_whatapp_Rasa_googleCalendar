@@ -64,6 +64,11 @@ nlu:
     - entiendo muchas gracias
     - de ninguna forma
     - luego gracias
+    - que más tienes
+    - no me interesan
+    - no tienes otra cosa?
+    - que más tienes?
+    - quisiera otra cosa
 
 - intent: mood_great
   examples: |
@@ -81,6 +86,152 @@ nlu:
     - tan perfecto
     - muy bien
     - tan perfecto
+
+#Aprende sinonimos
+- synonym: cardio box
+  examples: |
+    - cardio
+    - cardio boxing
+    - cardio box
+
+- synonym: box
+  examples: |
+    - boxeo
+    - box
+    - boxing
+
+- synonym: salsa
+  examples: |
+    - baile salsa
+    - salsa
+
+- synonym: entrenamiento funcional
+  examples: |
+    - funcional
+    - funcional training
+    - entrenamiento funcional
+    - functional
+
+- synonym: slide class
+  examples: |
+    - slide
+    - deslizamientos
+    - clase de slide
+
+- synonym: streching
+  examples: |
+    - estiramiento
+    - streching
+    - stretching
+#Pregunta por todas las clases
+- intent: preguntar_clases
+  examples: |
+    - ¿Qué clases tienen disponibles?
+    - Muéstrame los horarios de las clases
+    - ¿Qué tipos de clases ofrecen?
+    - Dime qué clases hay esta semana
+    - Quiero conocer las opciones de clases
+    - ¿Qué puedo tomar mañana?
+    - ¿Qué clases hay hoy?
+    - Enséñame el calendario de clases
+    - ¿Qué actividades tienen?
+    - ¿Qué clases hay en la tarde?
+    - ¿Qué clases dan por la mañana?
+    - ¿Cuáles son los horarios de yoga?
+    - ¿Qué días hay pilates?
+    - ¿Tienen entrenamiento funcional esta semana?
+    - Muéstrame los horarios de cardio box
+    - Quiero ver cuándo puedo tomar box
+    - ¿Qué días ofrecen salsa?
+    - Enséñame los horarios de strola
+    - ¿Hay streching por la mañana?
+    - ¿Qué clases de entrenamiento funcional hay hoy?
+    - ¿A qué hora es cardio box mañana?
+    - Quisiera saber los horarios de box
+    - ¿Cuándo puedo tomar salsa esta semana?
+    - Muéstrame strola para adultos mayores
+    - ¿Hay streching para adolescentes?
+    - ¿Qué clases de salsa hay en la tarde?
+    - Enséñame todas las opciones de entrenamiento funcional
+    - ¿Tienen cardio box por la tarde?
+    - Quiero ver los horarios de box para mañana
+    - ¿Qué días puedo tomar strola?
+    - ¿Hay streching disponible el viernes?
+    - ¿Qué clases de entrenamiento funcional hay el lunes a las 7am?
+    - Muéstrame los horarios de cardio box para el martes
+    - Quisiera saber a qué hora es box el miércoles
+    - ¿Hay salsa disponible el jueves a las 10am?
+    - ¿Puedo tomar strola el viernes por la tarde?
+    - Enséñame los horarios de streching el sábado a las 9am
+    - ¿Qué clases de entrenamiento funcional hay mañana a las 8am?
+    - Muéstrame cardio box hoy a las 6pm
+    - ¿Qué días puedo asistir a box esta semana?
+    - Quisiera ver los horarios de salsa para adolescentes
+    - ¿Hay strola disponible el lunes a las 7pm?
+    - ¿Qué horas tienen streching el martes por la mañana?
+    - ¿Puedo tomar entrenamiento funcional el miércoles a las 5pm?
+    - Enséñame cardio box para adultos mayores el jueves
+    - Quisiera saber los horarios de box el viernes a las 8am
+    - ¿Hay salsa por la tarde el sábado?
+    - Muéstrame strola el lunes a las 11am
+    - ¿Qué horas de streching hay mañana por la mañana?
+    - Quiero ver entrenamiento funcional el martes a las 6pm
+    - ¿Hay cardio box disponible el miércoles a las 7pm?
+
+#Pregunta por clases especificas
+- intent: preguntar_funcional
+  examples: |
+    - ¿Cuándo es la clase de [Entrenamiento Funcional](clase)?
+    - Me interesa [funcional](clase)
+    - Quisiera asistir a [functional](clase)
+    - Dime los horarios de [funcional training](clase)
+    - [Entrenamiento Funcional](clase), por favor
+    - ¿Qué días hay [Entrenamiento Funcional](clase)?
+    - ¿A qué hora es la clase de [funcional](clase)?
+    - Quiero apuntarme al [Entrenamiento Funcional](clase)
+    - ¿Tienen disponibilidad para [functional](clase)?
+    - Necesito saber los horarios de [funcional training](clase)
+    - ¿Puedo asistir a [Entrenamiento Funcional](clase) mañana?
+    - Me gustaría ir a la clase de [funcional](clase)
+    - ¿Hay [Entrenamiento Funcional](clase) hoy?
+    - Dime cuándo es [functional](clase)
+    - ¿Qué horarios tienen para [funcional training](clase)?
+
+- intent: preguntar_stretching
+  examples: |
+    - ¿Cuándo es la clase de [Stretching](clase)?
+    - Quiero asistir a [estiramiento](clase)
+    - Dime los horarios de [streching](clase)
+    - Me interesa la clase de [stretching](clase)
+    - [Stretching](clase), por favor
+    - ¿Qué días hay [Stretching](clase)?
+    - ¿A qué hora es la clase de [estiramiento](clase)?
+    - Quiero apuntarme al [Stretching](clase)
+    - ¿Tienen disponibilidad para [streching](clase)?
+    - Necesito saber los horarios de [stretching](clase)
+    - ¿Puedo asistir a [Stretching](clase) mañana?
+    - Me gustaría ir a la clase de [estiramiento](clase)
+    - ¿Hay [stretching](clase) hoy?
+    - Dime cuándo es [Stretching](clase)
+    - ¿Qué horarios tienen para [streching](clase)?
+
+- intent: preguntar_slide
+  examples: |
+    - ¿Cuándo es la clase de [Slide Class](clase)?
+    - Quiero asistir a [slide](clase)
+    - Dime los horarios de [deslizamientos](clase)
+    - Me interesa la [clase de slide](clase)
+    - [Slide Class](clase), por favor
+    - ¿Qué días hay [Slide Class](clase)?
+    - ¿A qué hora es la clase de [slide](clase)?
+    - Quiero apuntarme al [Slide Class](clase)
+    - ¿Tienen disponibilidad para [deslizamientos](clase)?
+    - Necesito saber los horarios de [clase de slide](clase)
+    - ¿Puedo asistir a [Slide Class](clase) mañana?
+    - Me gustaría ir a la clase de [slide](clase)
+    - ¿Hay [Slide Class](clase) hoy?
+    - Dime cuándo es [deslizamientos](clase)
+    - ¿Qué horarios tienen para [clase de slide](clase)?
 
 - intent: agendar_clase
   examples: |
@@ -151,159 +302,85 @@ nlu:
     - Apúntame en strola el viernes a las 7am
     - Buenas, quiero streching el sábado a las 8am
 
-- synonym: entrenamiento funcional
-  examples: |
-    - funcional
-    - funcional training
-    - entrenamiento funcional
-    - functional
-
-- synonym: cardio box
-  examples: |
-    - cardio
-    - cardio boxing
-    - cardio box
-
-- synonym: box
-  examples: |
-    - boxeo
-    - box
-    - boxing
-
-- synonym: salsa
-  examples: |
-    - baile salsa
-    - salsa
-
-- synonym: strola
-  examples: |
-    - strola
-    - strola dance
-    - clase strola
-
-- synonym: streching
-  examples: |
-    - estiramiento
-    - streching
-    - stretching
-
-- intent: preguntar_clases
-  examples: |
-    - ¿Qué clases tienen disponibles?
-    - Muéstrame los horarios de las clases
-    - ¿Qué tipos de clases ofrecen?
-    - Dime qué clases hay esta semana
-    - Quiero conocer las opciones de clases
-    - ¿Qué puedo tomar mañana?
-    - ¿Qué clases hay hoy?
-    - Enséñame el calendario de clases
-    - ¿Qué actividades tienen?
-    - ¿Qué clases hay en la tarde?
-    - ¿Qué clases dan por la mañana?
-    - ¿Cuáles son los horarios de yoga?
-    - ¿Qué días hay pilates?
-    - ¿Tienen entrenamiento funcional esta semana?
-    - Muéstrame los horarios de cardio box
-    - Quiero ver cuándo puedo tomar box
-    - ¿Qué días ofrecen salsa?
-    - Enséñame los horarios de strola
-    - ¿Hay streching por la mañana?
-    - ¿Qué clases de entrenamiento funcional hay hoy?
-    - ¿A qué hora es cardio box mañana?
-    - Quisiera saber los horarios de box
-    - ¿Cuándo puedo tomar salsa esta semana?
-    - Muéstrame strola para adultos mayores
-    - ¿Hay streching para adolescentes?
-    - ¿Qué clases de salsa hay en la tarde?
-    - Enséñame todas las opciones de entrenamiento funcional
-    - ¿Tienen cardio box por la tarde?
-    - Quiero ver los horarios de box para mañana
-    - ¿Qué días puedo tomar strola?
-    - ¿Hay streching disponible el viernes?
-    - ¿Qué clases de entrenamiento funcional hay el lunes a las 7am?
-    - Muéstrame los horarios de cardio box para el martes
-    - Quisiera saber a qué hora es box el miércoles
-    - ¿Hay salsa disponible el jueves a las 10am?
-    - ¿Puedo tomar strola el viernes por la tarde?
-    - Enséñame los horarios de streching el sábado a las 9am
-    - ¿Qué clases de entrenamiento funcional hay mañana a las 8am?
-    - Muéstrame cardio box hoy a las 6pm
-    - ¿Qué días puedo asistir a box esta semana?
-    - Quisiera ver los horarios de salsa para adolescentes
-    - ¿Hay strola disponible el lunes a las 7pm?
-    - ¿Qué horas tienen streching el martes por la mañana?
-    - ¿Puedo tomar entrenamiento funcional el miércoles a las 5pm?
-    - Enséñame cardio box para adultos mayores el jueves
-    - Quisiera saber los horarios de box el viernes a las 8am
-    - ¿Hay salsa por la tarde el sábado?
-    - Muéstrame strola el lunes a las 11am
-    - ¿Qué horas de streching hay mañana por la mañana?
-    - Quiero ver entrenamiento funcional el martes a las 6pm
-    - ¿Hay cardio box disponible el miércoles a las 7pm?
-
-
+#Pregunta por diponibilidad
 - intent: preguntar_disponibilidad
   examples: |
-    - hay cupo para entrenamiento funcional mañana a las 7am
-    - oye puedo reservar cardio box martes 8am
-    - queda lugar para box hoy a las 9am
-    - puedo reservar salsa a las 10am
-    - todavia hay lugar en strola el viernes
-    - quedan espacios en streching a las 8am
-    - hay entrenamiento funcional el miercoles a las 5pm
-    - puedo asistir a cardio box mañana por la tarde
-    - hay lugar en box el jueves a las 7pm
-    - ¿Hay cupo en entrenamiento funcional el martes a las 6pm?
-    - Oye, ¿puedo tomar cardio box el miércoles a las 8pm?
-    - ¿Quedan lugares en box el jueves por la tarde?
-    - ¿Todavía hay espacio en salsa el viernes a las 9am?
-    - ¿Me puedo apuntar a strola mañana a las 11am?
-    - ¿Hay disponibilidad en streching el sábado a las 7pm?
-    - ¿Quedan lugares para entrenamiento funcional el lunes a las 10am?
-    - ¿Puedo reservar cardio box el martes a las 7am?
-    - Hola, ¿hay cupo en box el miércoles a las 12pm?
-    - me gustaria saber si hay salsa esta semana
-    - tienen espacio libre en strola el sabado a las 10am
-    - todavia puedo entrar a streching el lunes por la mañana
-    - hay cupo en entrenamiento funcional el martes a las 6pm
-    - oye puedo tomar cardio box el miercoles a las 8pm
-    - quedan lugares en box el jueves por la tarde
-    - todavia hay espacio en salsa el viernes a las 9am
-    - me puedo apuntar a strola mañana a las 11am
-    - hay disponibilidad en streching el sabado a las 7pm
-    - quedan lugares para entrenamiento funcional el lunes a las 10am
-    - puedo reservar cardio box el martes a las 7am
-    - hola hay cupo en box el miercoles a las 12pm
-    - todavia puedo inscribirme en salsa el jueves a las 2pm
-    - queda espacio en strola el viernes a las 3pm
-    - hay streching por la mañana del sabado
-    - oye entrenamiento funcional tiene lugar mañana a las 9am
-    - puedo apuntarme a cardio box el lunes a las 6pm
-    - quedan lugares en box el martes por la tarde
-    - todavia hay espacio en salsa el miercoles a las 5pm
-    - me gustaria saber si strola tiene cupo el jueves
-    - puedo asistir a streching el viernes a las 7am
-    - hola hay lugar en entrenamiento funcional el sabado a las 8am
-    - todavia puedo reservar cardio box el lunes a las 7pm
-    - queda espacio en box el martes a las 10am
-    - oye salsa tiene cupo el miercoles a las 6pm
-    - puedo apuntarme a strola el jueves por la tarde
-    - quedan lugares en streching el viernes a las 9am
-    - me gustaria saber si entrenamiento funcional tiene lugar mañana
-    - puedo asistir a cardio box el martes a las 8am
-    - hola hay cupo en box el miercoles a las 7pm
-    - todavia puedo entrar a salsa el jueves a las 11am
-    - quedan lugares en strola el viernes por la tarde
-    - oye streching tiene lugar el sabado a las 12pm
-    - ¿Puedo reservar entrenamiento funcional el lunes a las 9am?
-    - ¿Todavía hay espacio en cardio box el martes por la mañana?
-    - Me gustaría saber si box tiene cupo el miércoles a las 2pm
-    - ¿Hay salsa disponible el jueves a las 6pm?
-    - ¿Quedan lugares en strola el viernes a las 8pm?
-    - Hola, ¿puedo asistir a streching mañana a las 7am?
-    - ¿Todavía hay cupo en entrenamiento funcional el lunes por la tarde?
-    - Oye, ¿cardio box tiene lugar el martes a las 5pm?
+    - hay cupo para [entrenamiento funcional](clase) mañana a las 7am
+    - oye puedo reservar [cardio box](clase) martes 8am
+    - queda lugar para [box](clase) hoy a las 9am
+    - puedo reservar [salsa](clase) a las 10am
+    - todavía hay lugar en [strola](clase) el viernes
+    - quedan espacios en [streching](clase) a las 8am
+    - hay [entrenamiento funcional](clase) el miércoles a las 5pm
+    - puedo asistir a [cardio box](clase) mañana por la tarde
+    - hay lugar en [box](clase) el jueves a las 7pm
+    - ¿Hay cupo en [entrenamiento funcional](clase) el martes a las 6pm?
+    - Oye, ¿puedo tomar [cardio box](clase) el miércoles a las 8pm?
+    - ¿Quedan lugares en [box](clase) el jueves por la tarde?
+    - ¿Todavía hay espacio en [salsa](clase) el viernes a las 9am?
+    - ¿Me puedo apuntar a [slide class](clase) mañana a las 11am?
+    - ¿Hay disponibilidad en [streching](clase) el sábado a las 7pm?
+    - ¿Quedan lugares para [entrenamiento funcional](clase) el lunes a las 10am?
+    - ¿Puedo reservar [cardio box](clase) el martes a las 7am?
+    - Hola, ¿hay cupo en [box](clase) el miércoles a las 12pm?
+    - Me gustaría saber si hay [salsa](clase) esta semana
+    - Tienen espacio libre en [slide class](clase) el sábado a las 10am
+    - Todavía puedo entrar a [streching](clase) el lunes por la mañana
+    - Hay cupo en [entrenamiento funcional](clase) el martes a las 6pm
+    - Oye puedo tomar [cardio box](clase) el miércoles a las 8pm
+    - Quedan lugares en [box](clase) el jueves por la tarde
+    - Todavía hay espacio en [salsa](clase) el viernes a las 9am
+    - Me puedo apuntar a [slide](clase) mañana a las 11am
+    - Hay disponibilidad en [streching](clase) el sábado a las 7pm
+    - Quedan lugares para [entrenamiento funcional](clase) el lunes a las 10am
+    - Puedo reservar [cardio box](clase) el martes a las 7am
+    - Hola hay cupo en [box](clase) el miércoles a las 12pm
+    - Todavía puedo inscribirme en [salsa](clase) el jueves a las 2pm
+    - Queda espacio en [clase de slide](clase) el viernes a las 3pm
+    - Hay [streching](clase) por la mañana del sábado
+    - Oye [entrenamiento funcional](clase) tiene lugar mañana a las 9am
+    - Puedo apuntarme a [cardio box](clase) el lunes a las 6pm
+    - Quedan lugares en [box](clase) el martes por la tarde
+    - Todavía hay espacio en [salsa](clase) el miércoles a las 5pm
+    - Me gustaría saber si [slide class](clase) tiene cupo el jueves
+    - Puedo asistir a [streching](clase) el viernes a las 7am
+    - Hola hay lugar en [entrenamiento funcional](clase) el sábado a las 8am
+    - Todavía puedo reservar [cardio box](clase) el lunes a las 7pm
+    - Queda espacio en [box](clase) el martes a las 10am
+    - Oye [salsa](clase) tiene cupo el miércoles a las 6pm
+    - Puedo apuntarme a [slide class](clase) el jueves por la tarde
+    - Quedan lugares en [streching](clase) el viernes a las 9am
+    - Me gustaría saber si [entrenamiento funcional](clase) tiene lugar mañana
+    - Puedo asistir a [cardio box](clase) el martes a las 8am
+    - Hola hay cupo en [box](clase) el miércoles a las 7pm
+    - Todavía puedo entrar a [salsa](clase) el jueves a las 11am
+    - Quedan lugares en [slide](clase) el viernes por la tarde
+    - Oye [streching](clase) tiene lugar el sábado a las 12pm
+    - ¿Puedo reservar [entrenamiento funcional](clase) el lunes a las 9am?
+    - ¿Todavía hay espacio en [cardio box](clase) el martes por la mañana?
+    - Me gustaría saber si [box](clase) tiene cupo el miércoles a las 2pm
+    - ¿Hay [salsa](clase) disponible el jueves a las 6pm?
+    - ¿Quedan lugares en [clase de slide](clase) el viernes a las 8pm?
+    - Hola, ¿puedo asistir a [streching](clase) mañana a las 7am?
+    - ¿Todavía hay cupo en [entrenamiento funcional](clase) el lunes por la t
 
+
+#Realizar pago tarjeta o efectivo
+- intent: pagar_tarjeta
+  examples: |
+    - Quiero pagar con tarjeta
+    - Pago con tarjeta
+    - Tarjeta
+    - Pagar con tarjeta de crédito
+    - Con tarjeta, por favor
+
+- intent: pagar_efectivo
+  examples: |
+    - Pagaré en efectivo
+    - Efectivo
+    - Prefiero pagar en caja
+    - Pago en efectivo
+    - Con dinero en efectivo
 
 - intent: cancelar_clases
   examples: |
