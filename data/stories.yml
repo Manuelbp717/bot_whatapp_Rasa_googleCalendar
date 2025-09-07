@@ -1,99 +1,89 @@
 version: "3.1"
 
 stories:
+# ---------- Saludo inicial ------------------
+- story: Saludo inicial
+  steps:
+    - intent: greet 
+    - action: utter_greet
+    - intent: affirm
+    - action: action_checar_clases
+    - action: utter_aclarar
+
+# ----------- Saludo y rechazo ----------------
+- story: Saludo inicial y rechazo
+  steps:
+    - intent: greet 
+    - action: utter_greet
+    - intent: deny
+    - action: utter_deny
+    - action: utter_despedidas
 
 # ---------- Preguntar clases y acepta ----------
 - story: Usuario pregunta por clases disponibles
   steps:
-  - intent: preguntar_clases
-  - action: utter_preguntar_clases
-
-# ---------- Preguntar clases y acepta ----------
-- story: Usuario pregunta por clases disponibles
-  steps:
-  - intent: preguntar_clases
-  - action: utter_preguntar_clases
-  - intent: affirm
-  - accion: utter_aclarar
-
-# ---------- Preguntar clases y no acepta ----------
-- story: Usuario pregunta por clases disponibles
-  steps:
-  - intent: preguntar_clases
-  - action: utter_preguntar_clases
-  - intent: deny
-  - accion: utter_rentas
-  - accion: action_checar_clases
-  - accion: utter_pedir_algo_mas
+    - intent: preguntar_clases
+    - action: utter_preguntar_clases
+    - action: action_checar_clases
+    - action: utter_aclarar
 
 # ----------- Preguntar por clase especifico------
 - story: Usuario pregunta por funcional
   steps:
-  - intent: preguntar_funcional
-  - accion: utter_clase_funcional
-  - accion: utter_pedir_algo_mas
+    - intent: preguntar_funcional
+    - action: utter_clase_funcional
+    - action: utter_pedir_algo_mas
 
 - story: Usuario pregunta por stretching 
   steps:
-  - intent: preguntar_stretching
-  - accion: utter_clase_stretching
-  - accion: utter_pedir_algo_mas
+    - intent: preguntar_stretching
+    - action: utter_clase_stretching
+    - action: utter_pedir_algo_mas
 
 - story: Usuario pregunta por slide
   steps:
-  - intent: preguntar_slide
-  - accion: utter_clase_Slide
-  - accion: utter_pedir_algo_mas
+    - intent: preguntar_slide
+    - action: utter_clase_Slide
+    - action: utter_pedir_algo_mas
 
-# ---------- Consultar disponibilidad ----------
-# ---------- Usuario acepta la reserva ----------
-- story: Usuario confirma reserva
+#----------- Agendar una clase ----------------
+- story: Usuario quiere agendar una clase
   steps:
-    - intent: preguntar_disponibilidad
-    - action: action_preguntar_disponibilidad
-    - slot_was_set:
-        - disponibilidad: "si"
-    - action: utter_aceptacion
-    - intent: affirm
-    - accion: utter_mood_great
+    - intent: agendar_clase
+    - action: utter_mood_great
+    - action: action_agendar_clase
     - action: utter_pago
 
-# ---------- Usuario rechaza la reserva ----------
-- story: Usuario rechaza reserva
+#------------- Preunta por disponibilidad --------
+- story: Usuario pregunta por clase especificas
   steps:
     - intent: preguntar_disponibilidad
-    - action: action_preguntar_disponibilidad
-    - slot_was_set:
-        - disponibilidad: "si"
-    - action: utter_aceptacion
-    - intent: deny
-    - accion: utter_deny
-    - action: utter_no_reserva
-    - accion: utter_despedidas
+    - action: utter_preguntar_disponibilidad
+    - action: action_checar_clases
+    - action: utter_aclarar
 
 # --------- Acepta y paga ------------
 - story: reservar_clase_y_pago
   steps:
     - intent: pagar_tarjeta
     - action: utter_tarjeta
-    - accion: utter_goodbye
+    - action: utter_goodbye
 
 - story: reservar_clase_y_pago_efectivo
   steps:
     - intent: pagar_efectivo
     - action: utter_efectivo
-    - accion: utter_goodbye
+    - action: utter_goodbye
 
 # ---------- Cancelar clase ----------
 - story: Usuario cancela una clase
   steps:
-  - intent: cancelar_clases
-  - action: action_cancelar_clase
-  - action: utter_confirmar_cancelacion
-  - action: utter_pedir_algo_mas
+    - intent: cancelar_clases
+    - action: utter_deny
+    - action: utter_goodbye
 
 # ---------- Bot challenge ----------
 - story: Usuario pregunta si eres un bot
   steps:
-  - intent: bot_challenge
-  - action: utter_bot_challenge
+    - intent: bot_challenge
+    - action: utter_bot_challenge

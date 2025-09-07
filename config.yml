@@ -17,19 +17,19 @@ pipeline:
   #   model: "es_core_news_sm"
   - name: WhitespaceTokenizer
   # Featurizers para mejorar reconocimiento con errores de ortografía y escritura rápida
+
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
-  - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
     analyzer: char_wb
     min_ngram: 1
     max_ngram: 4
-
+  
   # Clasificador de intenciones y entidades
   - name: DIETClassifier
-    epochs: 100
     constrain_similarities: true
-
+    epochs: 100
+    
   # Mapper para sinónimos de entidades (ej. clases equivalentes)
   - name: EntitySynonymMapper
 
@@ -42,12 +42,12 @@ pipeline:
     threshold: 0.4
     ambiguity_threshold: 0.1
 
-  # Opcional: regex extractor para capturar fechas, horas y nombres de clases
-  - name: RegexEntityExtractor
-
 policies:
   - name: MemoizationPolicy
   - name: TEDPolicy
     max_history: 5
     epochs: 100
   - name: RulePolicy
+    core_fallback_threshold: 0.3   # Si la confianza < 0.3, se activa el fallback
+    core_fallback_action_name: "action_default_fallback"
+    enable_fallback_prediction: True

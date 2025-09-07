@@ -17,12 +17,11 @@ nlu:
     - muy buenas tardes
     - hi
     - oye
-    - que clases tiene
     - disculpe
     - hoooolaaaaaa
     - buen dia
 
-- intent: goodbye
+- intent: despedidas
   examples: |
     - chao
     - adiós
@@ -37,6 +36,23 @@ nlu:
     - bye
     - tenga buen dia
     - luego gracias
+    - Adiosito
+    - Hasta luego
+    - Nos vemos
+    - Chau
+    - Que tengas un buen día
+    - Hasta la próxima
+    - Cuídate
+    - Bai
+    - Nos hablamos luego
+    - Me despido
+    - Muchas gracias, adiós
+    - Eso es todo, gracias
+    - Hasta mañana
+    - baibai
+    - paz
+    - bye
+    - sorry bye
 
 - intent: affirm
   examples: |
@@ -87,6 +103,15 @@ nlu:
     - muy bien
     - tan perfecto
 
+- intent: thanks
+  examples: |
+    - gracias
+    - muchas gracias por todo
+    - enserio lo agradezco
+    - thanks
+    - muchas gracias
+
+
 #Aprende sinonimos
 - synonym: cardio box
   examples: |
@@ -123,60 +148,114 @@ nlu:
     - estiramiento
     - streching
     - stretching
-#Pregunta por todas las clases
+
+- synonym: yoga
+  examples: |
+    - clase de yoga
+    - yoga
+    - meditación con posturas
+    - yoga flow
+
+- synonym: pilates
+  examples: |
+    - pilates
+    - clase de pilates
+    - pilates suelo
+    - pilates reformer
+
+- synonym: spinning
+  examples: |
+    - spinning
+    - ciclismo indoor
+    - clase de spinning
+    - ciclismo
+    - bicicleta
+    - rodar
+
+- synonym: crossfit
+  examples: |
+    - crossfit
+    - entrenamiento cruzado
+    - clase de crossfit
+
+- synonym: zumba
+  examples: |
+    - zumba
+    - baile fitness
+    - clase de zumba
+
+# Preguntar por todas las clases
 - intent: preguntar_clases
   examples: |
-    - ¿Qué clases tienen disponibles?
-    - Muéstrame los horarios de las clases
-    - ¿Qué tipos de clases ofrecen?
-    - Dime qué clases hay esta semana
-    - Quiero conocer las opciones de clases
+    - que clases hay
+    - que clases tienes
+    - que horarios tienen
+    - muéstrame las clases
+    - que puedo tomar hoy
+    - que actividades hay
+    - cuales clases hay disponibles
+    - cuales entrenamientos puedo tomar
+    - ¿Qué clases tienen?
+    - Muéstrame los entrenamientos disponibles
+    - Quiero ver las actividades de hoy
+    - Dime qué hay esta semana
+    - ¿Qué opciones de sesiones ofrecen?
+    - Me interesa conocer los horarios
     - ¿Qué puedo tomar mañana?
-    - ¿Qué clases hay hoy?
     - Enséñame el calendario de clases
-    - ¿Qué actividades tienen?
-    - ¿Qué clases hay en la tarde?
-    - ¿Qué clases dan por la mañana?
-    - ¿Cuáles son los horarios de yoga?
-    - ¿Qué días hay pilates?
-    - ¿Tienen entrenamiento funcional esta semana?
-    - Muéstrame los horarios de cardio box
-    - Quiero ver cuándo puedo tomar box
-    - ¿Qué días ofrecen salsa?
-    - Enséñame los horarios de strola
-    - ¿Hay streching por la mañana?
-    - ¿Qué clases de entrenamiento funcional hay hoy?
-    - ¿A qué hora es cardio box mañana?
-    - Quisiera saber los horarios de box
-    - ¿Cuándo puedo tomar salsa esta semana?
-    - Muéstrame strola para adultos mayores
-    - ¿Hay streching para adolescentes?
-    - ¿Qué clases de salsa hay en la tarde?
-    - Enséñame todas las opciones de entrenamiento funcional
-    - ¿Tienen cardio box por la tarde?
-    - Quiero ver los horarios de box para mañana
-    - ¿Qué días puedo tomar strola?
-    - ¿Hay streching disponible el viernes?
-    - ¿Qué clases de entrenamiento funcional hay el lunes a las 7am?
-    - Muéstrame los horarios de cardio box para el martes
-    - Quisiera saber a qué hora es box el miércoles
-    - ¿Hay salsa disponible el jueves a las 10am?
-    - ¿Puedo tomar strola el viernes por la tarde?
-    - Enséñame los horarios de streching el sábado a las 9am
-    - ¿Qué clases de entrenamiento funcional hay mañana a las 8am?
-    - Muéstrame cardio box hoy a las 6pm
-    - ¿Qué días puedo asistir a box esta semana?
-    - Quisiera ver los horarios de salsa para adolescentes
-    - ¿Hay strola disponible el lunes a las 7pm?
-    - ¿Qué horas tienen streching el martes por la mañana?
-    - ¿Puedo tomar entrenamiento funcional el miércoles a las 5pm?
-    - Enséñame cardio box para adultos mayores el jueves
-    - Quisiera saber los horarios de box el viernes a las 8am
-    - ¿Hay salsa por la tarde el sábado?
-    - Muéstrame strola el lunes a las 11am
-    - ¿Qué horas de streching hay mañana por la mañana?
-    - Quiero ver entrenamiento funcional el martes a las 6pm
-    - ¿Hay cardio box disponible el miércoles a las 7pm?
+    - ¿Hay algo por la tarde?
+    - Quiero ver los entrenamientos para adultos
+    - ¿Qué actividades puedo hacer hoy?
+    - Muéstrame lo que hay disponible
+    - ¿Tienen algo de ejercicio funcional?
+    - Quiero conocer todas las opciones de hoy
+    - ¿Qué hay por la mañana?
+    - Muéstrame los horarios de yoga o pilates
+    - Quisiera ver los entrenamientos para adolescentes
+    - ¿Hay algo de cardio esta semana?
+    - Muéstrame sesiones de la tarde
+    - ¿Qué actividades tienen abiertas?
+    - ¿Qué puedo tomar la próxima semana?
+    - Muéstrame los horarios disponibles
+    - Enséñame todas las actividades
+    - ¿Qué entrenamientos hay para adultos mayores?
+    - ¿Hay algo disponible a primera hora?
+    - Muéstrame las opciones de fitness
+    - ¿Qué clases de ejercicio hay hoy?
+    - Quiero ver los horarios de cualquier actividad
+    - ¿Tienen algo para relajarme?
+    - Muéstrame opciones de entrenamiento para mañana
+    - ¿Qué sesiones hay en la tarde o noche?
+    - Enséñame lo que puedo tomar hoy a cualquier hora
+    - ¿Hay actividades abiertas esta semana?
+    - Quiero ver horarios de cualquier clase
+    - Muéstrame entrenamientos para niños o jóvenes
+    - ¿Qué hay disponible para adultos mayores?
+    - Enséñame las sesiones para esta semana
+    - ¿Qué actividades puedo agendar?
+    - Quiero saber qué clases hay sin importar la hora
+    - ¿Tienen algo de ejercicio ligero disponible?
+    - ke clases ai
+    - kiero saver ke clases tienen
+    - q actividades tienen hoi
+    - muestreme las claces
+    - que claces ay
+    - ke ai disponible pa mañana
+    - qiero ver orarios de las clases
+    - hay algoo mañana?
+    - tienen algo de yga o pilates
+    - que entrenamintos ai oy
+    - clases hoy?
+    - y mañana?
+    - actividades?
+    - horarios porfa
+    - gym hoy
+    - entrenamientos tarde
+    - algo temprano?
+    - mañana opciones
+    - clases abiertas?
+    - disponible hoy?
+
 
 #Pregunta por clases especificas
 - intent: preguntar_funcional
@@ -235,72 +314,58 @@ nlu:
 
 - intent: agendar_clase
   examples: |
-    - Quiero agendar una clase de entrenamiento funcional el lunes a las 7am
-    - Reserva cardio box el martes a las 8am
-    - Me apunto a box el miércoles a las 9am
-    - Quisiera tomar salsa el jueves a las 10am
-    - Apúntame en strola el viernes a las 11am
-    - Necesito un lugar en streching el sábado a las 12pm
-    - ¿Puedes inscribirme en entrenamiento funcional el lunes a las 1pm?
-    - Me gustaría asistir a cardio box el martes a las 2pm
-    - Regístrame en box el miércoles a las 3pm
-    - Quiero reservar salsa el jueves a las 4pm
-    - Anótame en strola el viernes a las 5pm
-    - Quiero tomar streching el sábado a las 6pm
-    - Apúntame en entrenamiento funcional el lunes a las 7pm
-    - Reserva cardio box el martes a las 8pm
-    - Quiero agendar box el miércoles a las 7am
-    - Me apunto a salsa el jueves a las 8am
-    - Quisiera tomar strola el viernes a las 9am
-    - Regístrame en streching el sábado a las 10am
-    - ¿Puedo asistir a entrenamiento funcional el lunes a las 11am?
-    - Me gustaría reservar cardio box el martes a las 12pm
-    - Anótame en box el miércoles a la 1pm
-    - Quiero agendar salsa el jueves a las 2pm
-    - Apúntame en strola el viernes a las 3pm
-    - Quiero tomar streching el sábado a las 4pm
-    - Reserva entrenamiento funcional el lunes a las 5pm
-    - Me apunto a cardio box el martes a las 6pm
-    - Quisiera tomar box el miércoles a las 7pm
-    - Regístrame en salsa el jueves a las 8pm
-    - Apúntame en strola el viernes a las 7am
-    - Quiero asistir a streching el sábado a las 8am
-    - Quiero agendar entrenamiento funcional el lunes a las 9am
-    - Me gustaría reservar cardio box el martes a las 10am
-    - Anótame en box el miércoles a las 11am
-    - Quiero tomar salsa el jueves a las 12pm
-    - Apúntame en strola el viernes a la 1pm
-    - Regístrame en streching el sábado a las 2pm
-    - Hola, quiero apuntarme a entrenamiento funcional el lunes a las 7am
-    - Buenas, ¿puedo reservar cardio box para mañana a las 8am?
-    - Me gustaría ir a box el miércoles a las 9am, ¿hay lugar?
-    - Quisiera tomar salsa el jueves a las 10am
-    - Apúntame en strola el viernes a las 11am, por favor
-    - ¿Tienen streching el sábado a las 12pm? Quiero asistir
-    - Hola, ¿pueden inscribirme en entrenamiento funcional el lunes a la 1pm?
-    - Me interesa cardio box el martes a las 2pm, ¿hay espacio?
-    - Buenas tardes, quiero reservar box el miércoles a las 3pm
-    - ¿Puedo tomar salsa el jueves a las 4pm?
-    - Anótame en strola el viernes a las 5pm
-    - Quiero agendar streching el sábado a las 6pm
-    - Hola, quiero entrenamiento funcional el lunes a las 7pm
-    - Buenas, ¿hay cupo en cardio box el martes a las 8pm?
-    - Me gustaría asistir a box el miércoles a las 7am
-    - ¿Puedo apuntarme a salsa el jueves a las 8am?
-    - Quisiera inscribirme en strola el viernes a las 9am
-    - Apúntame en streching el sábado a las 10am
-    - Buenas, quiero entrenamiento funcional el lunes a las 11am
-    - Hola, me gustaría reservar cardio box el martes a las 12pm
-    - Anótame en box el miércoles a la 1pm
-    - ¿Puedo tomar salsa el jueves a las 2pm?
-    - Quiero ir a strola el viernes a las 3pm
-    - Hola, apúntame en streching el sábado a las 4pm
-    - Buenas, quiero entrenamiento funcional el lunes a las 5pm
-    - Me gustaría reservar cardio box el martes a las 6pm
-    - Hola, ¿puedo asistir a box el miércoles a las 7pm?
-    - Quisiera salsa el jueves a las 8pm
-    - Apúntame en strola el viernes a las 7am
-    - Buenas, quiero streching el sábado a las 8am
+    - Quiero reservar [cardio](clase) el [2025-09-08](fecha) a las [18:00](hora)
+    - Apúntame a [cardio boxing](clase) mañana a las [07:00](hora)
+    - Me gustaría reservar [cardio box](clase) el [2025-09-09](fecha) a las [09:00](hora)
+    - Reserva [box](clase) el [2025-09-10](fecha) a las [10:00](hora)
+    - Inscríbeme en [boxeo](clase) el [2025-09-11](fecha) a las [08:00](hora)
+    - Quisiera apartar un lugar en [boxing](clase) el [2025-09-12](fecha) a las [11:00](hora)
+    - Apúntame a [salsa](clase) mañana a las [17:00](hora)
+    - Me gustaría reservar [baile salsa](clase) el [2025-09-13](fecha) a las [18:30](hora)
+    - Reserva [funcional](clase) el [2025-09-14](fecha) a las [06:30](hora)
+    - Quiero inscribirme en [entrenamiento funcional](clase) el [2025-09-15](fecha) a las [19:00](hora)
+    - Apúntame a [funcional training](clase) el [2025-09-16](fecha) a las [07:00](hora)
+    - Reserva [functional](clase) mañana a las [09:00](hora)
+    - Me gustaría apartar un lugar en [slide](clase) el [2025-09-17](fecha) a las [08:00](hora)
+    - Apúntame a [deslizamientos](clase) mañana a las [10:00](hora)
+    - Reserva [clase de slide](clase) el [2025-09-18](fecha) a las [12:00](hora)
+    - Quisiera inscribirme en [streching](clase) el [2025-09-19](fecha) a las [06:00](hora)
+    - Apúntame a [estiramiento](clase) el [2025-09-20](fecha) a las [07:30](hora)
+    - Reserva [stretching](clase) mañana a las [09:30](hora)
+    - Quiero inscribirme en [yoga](clase) el [2025-09-21](fecha) a las [08:00](hora)
+    - Apúntame a [clase de yoga](clase) mañana a las [06:30](hora)
+    - Me gustaría reservar [meditación con posturas](clase) el [2025-09-22](fecha) a las [18:00](hora)
+    - Reserva [yoga flow](clase) el [2025-09-23](fecha) a las [10:00](hora)
+    - Quiero apartar un lugar en [pilates](clase) mañana a las [07:00](hora)
+    - Apúntame a [clase de pilates](clase) el [2025-09-24](fecha) a las [09:00](hora)
+    - Reserva [pilates suelo](clase) el [2025-09-25](fecha) a las [08:30](hora)
+    - Me gustaría inscribirme en [pilates reformer](clase) mañana a las [10:30](hora)
+    - Apúntame a [spinning](clase) el [2025-09-26](fecha) a las [06:00](hora)
+    - Quisiera apartar un lugar en [ciclismo indoor](clase) mañana a las [07:00](hora)
+    - Reserva [clase de spinning](clase) el [2025-09-27](fecha) a las [09:00](hora)
+    - Inscríbeme en [ciclismo](clase) mañana a las [18:00](hora)
+    - Apúntame a [bicicleta](clase) el [2025-09-28](fecha) a las [08:00](hora)
+    - Reserva [rodar](clase) mañana a las [10:00](hora)
+    - Quiero apartar un lugar en [crossfit](clase) el [2025-09-29](fecha) a las [07:00](hora)
+    - Apúntame a [entrenamiento cruzado](clase) mañana a las [06:30](hora)
+    - Reserva [clase de crossfit](clase) el [2025-09-30](fecha) a las [09:30](hora)
+    - Me gustaría inscribirme en [zumba](clase) el [2025-10-01](fecha) a las [08:00](hora)
+    - Apúntame a [baile fitness](clase) mañana a las [10:00](hora)
+    - Reserva [clase de zumba](clase) el [2025-10-02](fecha) a las [09:00](hora)
+    - Quisiera apartar un lugar en [cardio](clase) mañana a las [18:00](hora)
+    - Apúntame a [cardio boxing](clase) el [2025-10-03](fecha) a las [07:30](hora)
+    - Reserva [box](clase) mañana a las [06:00](hora)
+    - Quiero inscribirme en [boxeo](clase) el [2025-10-04](fecha) a las [08:30](hora)
+    - Apúntame a [boxing](clase) mañana a las [09:00](hora)
+    - Reserva [salsa](clase) el [2025-10-05](fecha) a las [10:00](hora)
+    - Me gustaría apartar un lugar en [baile salsa](clase) mañana a las [07:00](hora)
+    - Apúntame a [funcional](clase) el [2025-10-06](fecha) a las [08:30](hora)
+    - Reserva [entrenamiento funcional](clase) mañana a las [09:30](hora)
+    - Quiero inscribirme en [functional](clase) el [2025-10-07](fecha) a las [10:30](hora)
+    - Apúntame a [slide](clase) mañana a las [07:30](hora)
+    - Reserva [deslizamientos](clase) el [2025-10-08](fecha) a las [08:00](hora)
+    - Me gustaría inscribirme en [clase de slide](clase) mañana a las [09:00](hora)
+    - Apúntame a [streching](clase) el [2025-10-09](fecha) a las [10:00](hora)
 
 #Pregunta por diponibilidad
 - intent: preguntar_disponibilidad
@@ -363,7 +428,26 @@ nlu:
     - ¿Quedan lugares en [clase de slide](clase) el viernes a las 8pm?
     - Hola, ¿puedo asistir a [streching](clase) mañana a las 7am?
     - ¿Todavía hay cupo en [entrenamiento funcional](clase) el lunes por la t
-
+    - ¿Hay cupo para [pilates](clase) mañana a las 7am?
+    - Oye, ¿puedo reservar [pilates reformer](clase) el martes a las 9am?
+    - ¿Quedan lugares para [entrenamiento cruzado](clase) esta tarde?
+    - Hola, ¿tienen espacio para [crossfit](clase) el miércoles por la mañana?
+    - Me gustaría saber si hay lugar en [baile fitness](clase) este viernes
+    - ¿Puedo reservar [zumba](clase) para mañana por la tarde?
+    - Oye, ¿hay [spinning](clase) el lunes a las 6am?
+    - ¿Tienen cupo para [ciclismo indoor](clase) el jueves?
+    - ¿Todavía hay espacio en [crossfit](clase) el sábado a las 8am?
+    - Quiero saber si hay disponibilidad en [pilates](clase) hoy
+    - ¿Puedo apuntarme a [baile fitness](clase) este miércoles a las 7pm?
+    - Oye, ¿queda lugar para [zumba](clase) mañana al mediodía?
+    - ¿Hay cupo para [pilates reformer](clase) el jueves por la mañana?
+    - ¿Tienen clases de [ciclismo indoor](clase) disponibles hoy?
+    - Hola, ¿puedo reservar [crossfit](clase) para el viernes a las 6pm?
+    - ¿Todavía hay espacio en [spinning](clase) el martes por la tarde?
+    - Me gustaría saber si [zumba](clase) tiene cupo mañana
+    - ¿Puedo asistir a [pilates](clase) el lunes a las 5pm?
+    - Oye, ¿hay disponibilidad en [entrenamiento cruzado](clase) esta semana?
+    - Quiero saber si [ciclismo indoor](clase) tiene lugar el sábado
 
 #Realizar pago tarjeta o efectivo
 - intent: pagar_tarjeta
@@ -373,6 +457,40 @@ nlu:
     - Tarjeta
     - Pagar con tarjeta de crédito
     - Con tarjeta, por favor
+    - con tarjeta
+    - puede ser por transferencia?
+    - transferido
+    - tarjeta
+    - uso mi tarjeta
+    - cobren en tarjeta
+    - pago digital
+    - con crédito
+    - débito
+    - quiero usar mi visa
+    - mastercard
+    - con tarjeta de débito
+    - pago online
+    - pago contactless
+    - hago el pago ahora
+    - ¿puedo pagar ya?
+    - listo para pagar
+    - ¿cómo pago?
+    - pago ahora
+    - voy a abonar
+    - hago el pago en este momento
+    - listo para abonar
+    - ¿puedo pagar así?
+    - quiero pagar
+    - pag con tarheta
+    - pago cn tarjeta
+    - tarheta
+    - pag tarjeta
+    - con tarjetaa
+    - pago c tarjeta
+    - tarjet
+    - pgar con tarjeta
+    - pago cont tarjeta
+    - paga con tarjet
 
 - intent: pagar_efectivo
   examples: |
@@ -381,49 +499,80 @@ nlu:
     - Prefiero pagar en caja
     - Pago en efectivo
     - Con dinero en efectivo
+    - cuando vaya pago
+    - pago cash
+    - pago en mano
+    - en efectivo
+    - pago directo
+    - pagare en efectvo
+    - efevtivo
+    - prefiro pagar en caja
+    - pago en efecivo
+    - cn dinero en efectivo
+    - cundo vaya pago
+    - pag cash
+    - pago en manoo
+    - en efevtivo
+    - pago direccto
 
+#Entrenamiento de aprender a cancelar clases
 - intent: cancelar_clases
   examples: |
-    - Quiero cancelar mi clase de yoga mañana, disculpa
-    - Perdón, no podré asistir a pilates el lunes
-    - Cancela mi inscripción en spinning hoy, lo siento
-    - Deseo eliminar mi reserva de crossfit a las 18:00, perdón por avisar tarde
-    - Quiero anular mi clase de zumba, disculpa las molestias
-    - Cancela mi clase de entrenamiento funcional, lo siento mucho
-    - No voy a poder ir a yoga el martes, perdón por avisar
-    - Elimina mi clase de pilates del miércoles, disculpa
-    - Borra mi inscripción en zumba, lo siento
-    - Necesito cancelar spinning de hoy, perdón por el inconveniente
-    - Quiero dar de baja mi clase de crossfit, disculpa
-    - Anula mi cita para yoga del viernes, lo siento
-    - Perdón, quiero cancelar entrenamiento funcional mañana
-    - Disculpa, no asistiré a cardio box el martes
-    - Cancela mi clase de box del jueves, lo siento mucho
-    - No voy a poder tomar salsa el viernes, perdón por avisar tarde
-    - Quisiera cancelar strola el miércoles, disculpa
-    - Perdón, necesito cancelar streching mañana a las 7am
-    - Disculpa, cancela mi entrenamiento funcional del lunes
-    - Lo siento, no asistiré a cardio box hoy
-    - Perdón, borra mi clase de box del martes
-    - Quisiera dar de baja salsa del jueves, disculpa
-    - Cancela strola del viernes, lo siento mucho
-    - No podré ir a streching el sábado, perdón
-    - Disculpa, necesito cancelar yoga mañana a las 8am
+    - Quiero cancelar mi clase de [yoga](clase) mañana, disculpa
+    - Perdón, no podré asistir a [pilates](clase) el lunes
+    - Cancela mi inscripción en [spinning](clase) hoy, lo siento
+    - Deseo eliminar mi reserva de [ciclismo indoor](clase) a las 18:00, perdón por avisar tarde
+    - Quiero anular mi clase de [baile fitness](clase), disculpa las molestias
+    - Cancela mi clase de [entrenamiento funcional](clase), lo siento mucho
+    - No voy a poder ir a [functional training](clase) el martes, perdón por avisar
+    - Elimina mi clase de [pilates reformer](clase) del miércoles, disculpa
+    - Borra mi inscripción en [baile de salsa](clase), lo siento
+    - Necesito cancelar [crossfit](clase) de hoy, perdón por el inconveniente
+    - Quiero dar de baja mi clase de [entrenamiento cruzado](clase), disculpa
+    - Anula mi cita para [yoga flow](clase) del viernes, lo siento
+    - Perdón, quiero cancelar [entrenamiento funcional](clase) mañana
+    - Disculpa, no asistiré a [cardio box](clase) el martes
+    - Cancela mi clase de [box](clase) del jueves, lo siento mucho
+    - No voy a poder tomar [salsa](clase) el viernes, perdón por avisar tarde
+    - Quisiera cancelar [slide](clase) el miércoles, disculpa
+    - Perdón, necesito cancelar [stretching](clase) mañana a las 7am
+    - Disculpa, cancela mi [functional training](clase) del lunes
+    - Lo siento, no asistiré a [cardio box](clase) hoy
+    - Perdón, borra mi clase de [boxeo](clase) del martes
+    - Quisiera dar de baja [baile de salsa](clase) del jueves, disculpa
+    - Cancela [slide class](clase) del viernes, lo siento mucho
+    - No podré ir a [estiramiento](clase) el sábado, perdón
+    - Disculpa, necesito cancelar [yoga](clase) mañana a las 8am
 
-
-- intent: despedidas
+- intent: bot_challenge
   examples: |
-    - Adiós
-    - Hasta luego
-    - Nos vemos
-    - Chao
-    - Buenas noches
-    - Que tengas un buen día
-    - Hasta la próxima
-    - Cuídate
-    - Bye
-    - Nos hablamos luego
-    - Me despido
-    - Muchas gracias, adiós
-    - Eso es todo, gracias
-    - Hasta mañana
+    - ¿Quién eres?
+    - Dime quién eres
+    - ¿Cómo te llamas?
+    - Quiero saber quién eres
+    - Cuéntame algo sobre ti
+    - ¿Eres un bot?
+    - ¿Qué eres?
+    - Me puedes decir tu nombre
+    - ¿Quién me está respondiendo?
+    - ¿Eres una inteligencia artificial?
+    - Hola, ¿quién eres?
+    - Preséntate, por favor
+    - ¿Cuál es tu nombre?
+    - ¿Me puedes decir tu identidad?
+    - ¿Qué clase de bot eres?
+    - ¿Eres humano o bot?
+    - Explícame quién eres
+    - ¿Quién está hablando conmigo?
+    - ¿Quién eres tú?
+    - ¿Eres un asistente virtual?
+    - ¿Qué eres tú exactamente?
+    - Necesito saber quién eres
+    - ¿Me puedes decir quién eres?
+    - ¿Cuál es tu función?
+    - ¿Eres real o virtual?
+    - ¿Qué tipo de bot eres?
+    - ¿Quién creó este bot?
+    - Identifícate, por favor
+    - ¿Eres un programa de computadora?
+    - ¿Me puedes explicar quién eres?

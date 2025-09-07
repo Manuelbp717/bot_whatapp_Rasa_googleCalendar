@@ -1,0 +1,3 @@
+quieren que todo se maneje desde la api de bot_whatapp_Rasa_googleCalendar.git
+en la describción podemos incluir en el numero de personas que quieren inscribirse
+para

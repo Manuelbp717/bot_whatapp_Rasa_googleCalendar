@@ -17,53 +17,30 @@ intents:
   - preguntar_disponibilidad
   - cancelar_clases
   - despedidas
+  - thanks
+  - pagar_efectivo
+  - pagar_tarjeta
 
 entities:
-  - nombre
-  - telefono
-  - cupo
-  - cantidad
   - clase
   - fecha
   - hora
 
 slots:
-  nombre:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: nombre
-      - type: from_text
-  telefono:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: telefono
-      - type: from_text
-  cupo:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: cupo
-      - type: from_text
-  cantidad:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: cantidad
-      - type: from_text   
   clase:
     type: text
     mappings:
       - type: from_entity
         entity: clase
       - type: from_text
+
   fecha:
     type: text
     mappings:
       - type: from_entity
         entity: fecha
       - type: from_text
+
   hora:
     type: text
     mappings:
@@ -93,27 +70,24 @@ responses:
     - text: "Perfecto 👍"
     - text: "¡Excelente, sigamos con toda la energía!"
 
+  utter_thanks:
+    - text: "Es un placer ayudarte... 👍🔥"
+    - text: "Estamos para servirte... 👍"
+
   utter_deny:
     - text: "Está bien, no hay problema."
     - text: "Es una lastima."
     - text: "Entiendo"
-
-  utter_confirm_deny:
-    - text: "Permitame un momento, para notificar su cancelación"
-
-  utter_mood_unhappy:
-    - text: "Lo siento mucho 😔, espero que entrenar te ayude a sentirte mejor."
-    - text: "Ánimo 💪, aquí estamos para motivarte."
 
   utter_bot_challenge:
     - text: "Soy el asistente virtual de Strola, estoy aquí para ayudarte a agendar y resolver dudas."
 
   #Respuesta a preguntar por la clase
   utter_preguntar_clases:
-    - text: "Tenemos clases de Entrenamiento Funcional, Stretching y Slide Class. ¿Te interesaria conocer los horarios de alguna clase en específico?"
+    - text: "Estas son todas la que tenemos disponibles."
 
   utter_aclarar:
-   - text: "¿Cuál de las 3 te interesa?"
+   - text: "Para cualquier clase que quieras agendar, porfavor dimelo espcificando clase, fecha[dia-mes-año] y hora[12:00pm], para que puedo agendar automaticamente tu solicitud"
 
   #Horarios de las clases
   utter_clase_funcional:
@@ -133,9 +107,9 @@ responses:
   
   #Pregunta por la disponibilidad (interversion de usuario admin en conversación)
   utter_preguntar_disponibilidad:
-    - text: "Espera un momento, revisaré la disponibilidad de {clase} el {fecha} a las {hora}... ⏳"
-    - text: "Déjame verificar si hay cupo para {clase} el {fecha} a las {hora}..."
-    - text: "Checaré la disponibilidad de inmediato para la {clase} el {fecha} a las {hora}..."
+    - text: "Espera un momento, revisaré la disponibilidad de {clase}... ⏳"
+    - text: "Déjame verificar si hay cupo para {clase}..."
+    - text: "Checaré la disponibilidad de inmediato para la {clase}..."
 
   #Iniciar proceso de reserva
   utter_aceptacion:
@@ -145,9 +119,11 @@ responses:
   utter_pago:
   - text: "Para finalizar, te informamos que el pago de la clase puede ser por transferencia o pagar en caja, ¿Cómo deseas realizarlo?"
 
+  #Pago con tarjeta
   utter_tarjeta:
   - text: "Perfecto, puedes realizar el pago con la tarjeta siguiendo este número: 1234-5678-9012-3456"
 
+  #Pago con efectivo
   utter_efectivo:
   - text: "Está bien, te recomendamos presentarte unos minutos antes de tu clase para pagar en efectivo."
 
@@ -161,25 +137,14 @@ responses:
     - text: "Tu clase de {clase} para el {fecha} a las {hora} ha sido confirmada."
     - text: "Correcto, tu clase ha sido reversada con exito, te esperamos a las {hora}"
 
-  #Cancelar clases
-  utter_cancelar_clases:
-    - text: "Tu clase de {clase} el {fecha} a las {hora} ha sido cancelada. Esperamos verte pronto de nuevo"
-    - text: "He eliminado tu reserva de {clase}. Esperamos verte en otra clase pronto."
-  
   utter_confirmar_reserva:
     - text: "Tu clase fue reservada. Nos vemos en el gym."
     - text: "Ya reserve tu lugar, Nos vemos en el gym."
-  
-  utter_confirmar_cancelacion:
-    - text: "Tu clase fue cancelada, Esperamos verte en otra ocasión."
-  
-  utter_renta:
-    - text: "Tenemos otras opciones, con entrenadores externos. Permiteme un momento pregunto..."
-
+    
 actions:
   - action_agendar_clase
   - action_cancelar_clase
   - action_preguntar_disponibilidad
   - action_proceder_al_pago
   - action_checar_clases
-  
+  - action_default_fallback
